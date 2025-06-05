@@ -35,14 +35,14 @@ def test_config_save_load() -> None:
 
     with tempfile.NamedTemporaryFile(mode="w+", delete=False) as f:
         config.save(f.name)
-        loaded_config = Config.load(f.name)
-
-    assert loaded_config.bookmarks_file == config.bookmarks_file
-    assert loaded_config.timeout == config.timeout
-    assert loaded_config.retries == config.retries
-    assert loaded_config.openrouter_api_key == config.openrouter_api_key
-    assert loaded_config.openrouter_model == config.openrouter_model
-    assert loaded_config.cache_dir == config.cache_dir
-    assert loaded_config.output_dir == config.output_dir
+        loaded_config = Config().load(f.name)
+        
+        assert loaded_config.bookmarks_file == config.bookmarks_file
+        assert loaded_config.timeout == config.timeout
+        assert loaded_config.retries == config.retries
+        assert loaded_config.openrouter_api_key == config.openrouter_api_key
+        assert loaded_config.openrouter_model == config.openrouter_model
+        assert loaded_config.cache_dir == config.cache_dir
+        assert loaded_config.output_dir == config.output_dir
 
     os.unlink(f.name)
