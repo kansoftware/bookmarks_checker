@@ -1,2 +1,94 @@
-# bookmarks_checker
-The program is designed to check the availability of links in Google Chrome and Yandex Browser, as well as create descriptions for them
+# Bookmarks Checker
+
+Программа для проверки доступности закладок из браузеров Chrome/Yandex Browser и создания структурированных описаний в формате Markdown.
+
+## Возможности
+
+- Проверка доступности закладок
+- Автоматическое создание структурированных описаний
+- Сохранение иерархии закладок
+- Удобный GUI интерфейс
+- Поддержка многопоточной обработки
+- Возможность приостановки/возобновления проверки
+
+## Технический стек
+
+- Python 3.x
+- PyQt6 для GUI
+- aiohttp для асинхронных запросов
+- beautifulsoup4 для парсинга страниц
+- markdown для работы с markdown файлами
+- openrouter.ai API для извлечения ключевых слов
+- playwright для работы с headless браузером
+- requests для HTTP запросов
+- tenacity для повторных попыток
+- aiofiles для асинхронной работы с файлами
+- pydantic для валидации данных
+
+## Установка
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/yourusername/bookmarks_checker.git
+cd bookmarks_checker
+```
+
+2. Создайте виртуальное окружение:
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# или
+.\venv\Scripts\activate  # Windows
+```
+
+3. Установите зависимости:
+```bash
+pip install -r requirements.txt
+```
+
+## Использование
+
+1. Запустите программу:
+```bash
+python src/main.py
+```
+
+2. Выберите файл закладок браузера
+3. Настройте параметры проверки:
+   - Таймауты и повторные попытки
+   - Настройки LLM для извлечения ключевых слов
+
+4. Запустите проверку
+
+## Структура проекта
+
+```
+bookmarks_checker/
+├── src/
+│   ├── gui/          # GUI компоненты
+│   ├── core/         # Основная логика
+│   └── utils/        # Утилиты
+├── tests/            # Тесты
+├── docs/             # Документация
+├── requirements.txt  # Зависимости
+└── README.md        # Этот файл
+```
+
+## Разработка
+
+- Код форматируется с помощью black
+- Импорты сортируются с помощью isort
+- Типы проверяются с помощью mypy
+- Тесты запускаются с помощью pytest
+- Покрытие тестами > 80%
+
+## Безопасность
+
+- Пропуск потенциально опасных URL
+- Безопасная обработка URL
+- Логирование ошибок
+- Примечания о SSL и конфиденциальности
+
+## Лицензия
+
+MIT 
